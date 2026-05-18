@@ -18,6 +18,7 @@ Livewire::setScriptRoute(function ($handle) {
 /*
 / END
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', App\Livewire\Portfolio\Home::class)->name('home');
+Route::get('/showcase', App\Livewire\Portfolio\Showcase::class)->name('showcase');
+Route::get('/showcase/{slug}', App\Livewire\Portfolio\ProjectDetail::class)->name('project-detail');
+Route::get('/contact', App\Livewire\Portfolio\ContactForm::class)->name('contact');
